@@ -7,7 +7,7 @@ const open = require('open');
 var app = express();
 
 app.get("/", function (request, response) {
-    response.sendFile(__dirname + "/home.html");
+    response.sendFile(__dirname + "/login.html");
 });
 
 
