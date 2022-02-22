@@ -1,0 +1,20 @@
+{
+  "name": "engageAutomation",
+  "version": "0.9.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "start": "node form.js",
+    "start1": "node form.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "open": "^8.4.0",
+    "path": "^0.12.7"
+  }
+}
