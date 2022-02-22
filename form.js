@@ -14,6 +14,9 @@ app.get("/", function (request, response) {
 app.listen(Port, function () {
     console.log('Express server listening on port ', Port); // eslint-disable-line
 });
+app.get('/upload', function (request, response) {
+    response.sendFile(__dirname + "/home.html");
+}),
 //define the route for "/"
 app.listen(8080);
 open('http://localhost:8080');
