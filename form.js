@@ -20,4 +20,4 @@ app.get('/upload', function (request, response) {
 //define the route for "/"
 app.listen(8080);
 open('http://localhost:8080');
-console.log("Please launch http://localhost:8080 in your browser url");
+console.log("Please launch http://localhost:8080 in your browser url/ or direct url");
