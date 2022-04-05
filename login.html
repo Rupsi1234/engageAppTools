@@ -7,8 +7,9 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Login - Enagage QA Tools</title>
+  <title>Login - Engage QA Tools</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
@@ -25,14 +26,20 @@
             <form action="/homepage" method="get" id="login-form" class="box has-background-light">
               <div class="field">
                 <label for="" class="label">Email</label>
-                <div class="control">
+                <div class="control has-icons-left">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
                   <input type="email" id="email-field" placeholder="e.g. johndoe@gmail.com" class="input" required>
                 </div>
               </div>
               <div class="field">
                 <label for="" class="label">Password</label>
-                <div class="control">
+                <div class="control has-icons-left">
                   <input type="password" id="password-field" placeholder="*******" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
                 </div>
               </div>
               <div class="field">
@@ -42,7 +49,7 @@
                 </label>
               </div>
               <div class="field">
-                <button class="button is-link is-fullwidth" type="submit" id="login-form-submit">
+                <button class="button is-dark is-fullwidth" type="submit" id="login-form-submit">
                   Login
                 </button>
               </div>
