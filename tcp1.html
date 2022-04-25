@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Engage QA Tools</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body class="has-navbar-fixed-top">
+  <nav class="navbar has-background-grey-lighter is-fixed-top is-spaced has-shadow" role="navigation"
+    aria-label="main navigation">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <img
+          src="https://config-qa.engage.comprodls.com/4eabb7df/difusion/expapp/ootb/v25/assets/images/engage_app.svg">
+      </div>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasic" class="navbar-menu">
+      <div class="navbar-start">
+        <!-- 
+        <a class="navbar-item">
+          Home
+        </a>
+      -->
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            App URLs
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://engage-difusion-dev1.comprodls.com/" target="_blank">
+              Engage - dev1
+            </a>
+
+            <a class="navbar-item" href="https://engage-difusion-dev2.comprodls.com/" target="_blank">
+              Engage - dev2
+            </a>
+
+            <a class="navbar-item" href="https://engage-dev2.comprodls.com/" target="_blank">
+              Engage - dev2 (generic)
+            </a>
+
+            <a class="navbar-item" href="https://backoffice-difusion-dev1.comprodls.com/" target="_blank">
+              Backoffice - dev1
+            </a>
+
+            <a class="navbar-item" href="https://backoffice-difusion-dev2.comprodls.com/" target="_blank">
+              Backoffice - dev2
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Accessibility
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">
+              W3C Guidelines
+            </a>
+
+            <a class="navbar-item"
+              href="https://docs.google.com/spreadsheets/d/1aJ2VL4rhSfHGFt2OtXKhfvH0QlMwq5eOfnGUUVTcht4/edit#gid=445513750"
+              target="_blank">
+              Guidelines for Engage
+            </a>
+
+            <a class="navbar-item"
+              href="https://docs.google.com/spreadsheets/d/1CMQ3C4LIoaNhRzWaN0FOfg3lQJwb3ubqqigadJoNdqc/edit#gid=0"
+              target="_blank">
+              QA Status
+            </a>
+
+            <a class="navbar-item" href="https://accessibilityinsights.io/en/downloads/" target="_blank">
+              Accessibility Tool
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://projects.invisionapp.com/share/R510S1Q7X94A#/screens/454803500?browse"
+              target="_blank">
+              Engage IR Mocks
+            </a>
+            <a class="navbar-item" href="https://semaphoreci.com/comprodlsengage" target="_blank">
+              Semaphore
+            </a>
+            <a class="navbar-item" href="https://bitbucket.org/dashboard/repositories" target="_blank">
+              Bitbucket
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item has-text-grey-light" disabled>
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button">
+          <strong>Home</strong>
+        </button>
+        <form method='GET' action="/">
+          <button class="button">
+            <strong>Log Out</strong>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+  <section class="section">
+    <div class="container">
+      <br>
+      <div class="level">
+        <p class="content title is-spaced">Test Cases</p>
+        <div class="buttons is-right">
+          <button class="button is-link is-light" onclick="history.back()">Back</button>
+        </div>
+      </div>
+      <br>
+      <div class="field has-addons">
+        <div class="control has-icons-left is-expanded">
+          <input type="text" id="search" class="input"
+            placeholder="Search for the test cases containing specific text e.g log in">
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+        <div class="control">
+          <a class="button is-info">
+            Search
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="table-container">
+        <table class="table is-narrow is-hoverable" style="width: 100%">
+          <thead>
+            <tr>
+              <th title="Field #0">
+                <label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </th>
+              <th title="Field #1">Case code</th>
+              <th title="Field #2">FirstName</th>
+              <th title="Field #3">LastName</th>
+              <th title="Field #4">ModuleName</th>
+              <th title="Field #5">Title</th>
+              <th title="Field #6">Type</th>
+              <th title="Field #7">Priorities</th>
+              <th title="Field #8">Precondition</th>
+              <th title="Field #9">Steps</th>
+              <th title="Field #10">ExpectedResult</th>
+              <th title="Field #11">Mode</th>
+              <th title="Field #12">Tags</th>
+              <th title="Field #13">Test Suite</th>
+              <th title="Field #14">Description</th>
+              <th title="Field #15">Linked Cases</th>
+              <th title="Field #16">Custom_TestCase_ID</th>
+              <th title="Field #17">QA Queries</th>
+              <th title="Field #18">Dev Remarks</th>
+              <th title="Field #19">VisualTest</th>
+              <th title="Field #20">CreatedDate</th>
+              <th title="Field #21">UpdatedDate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>TC0001</td>
+              <td>Ruspi</td>
+              <td>Mehta</td>
+              <td>Experience App&gt;Classes&gt;MyClass - Teacher</td>
+              <td>Validate the content (in english) of the My Classes Page if instructor has not created any Class.</td>
+              <td>other</td>
+              <td>medium</td>
+              <td>Login with teacher credentials that has not created any class Yet</td>
+              <td>1. Validate the content on My Class Page.</td>
+              <td>1. The content should be correct and desired language</td>
+              <td>automation</td>
+              <td>P2</td>
+              <td>-</td>
+              <td> </td>
+              <td>-</td>
+              <td>ENG_INS_CLASS_TC_1</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>7/6/2021 8:54</td>
+              <td>7/6/2021 8:54</td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>TC0008</td>
+              <td>Ruspi</td>
+              <td>Mehta</td>
+              <td>Experience App&gt;Classes&gt;MyClass - Teacher</td>
+              <td>Validate that clicking on menu button on a class card displays available menu options</td>
+              <td>functional</td>
+              <td>high</td>
+              <td>Login with teacher credentials that has created at least one class class</td>
+              <td>1. Click on more option on a class</td>
+              <td>Validate the menu is opened and data is correct</td>
+              <td>automation</td>
+              <td>P1</td>
+              <td>-</td>
+              <td> </td>
+              <td>-</td>
+              <td>ENG_INS_CLASS_TC_8</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>7/6/2021 8:54</td>
+              <td>7/6/2021 8:54</td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>TC2513</td>
+              <td>Swati</td>
+              <td>Gakhar</td>
+              <td>Experience App&gt;Flipbook</td>
+              <td>Validate that the left / right keys move the cursor and disable the navigation when inside the textbox
+              </td>
+              <td>acceptance</td>
+              <td>critical</td>
+              <td>User should have launched flipbook</td>
+              <td>1. Go to textbox<br />2. Press left / right key</td>
+              <td>1. The left/right keys should move the cursor in the required direction</td>
+              <td>manual</td>
+              <td>P1</td>
+              <td>-</td>
+              <td> </td>
+              <td>-</td>
+              <td>ENG_FLIP_TC_60</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>4/18/2022 5:45</td>
+              <td>4/18/2022 5:45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        © 2022 Compro Technologies | All Rights Reserved
+      </p>
+    </div>
+  </footer>
+</body>
+<script>
+  const fileInput = document.querySelector('#file_upload input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#file_upload .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }
+</script>
+
+</html>
