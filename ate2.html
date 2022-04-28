@@ -7,8 +7,9 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Home - Engage QA Tools</title>
+  <title>Engage QA Tools</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -112,104 +113,155 @@
           </div>
         </div>
       </div>
-      <form method='GET' action="/">
+      <div class="buttons">
         <button class="button">
-          <strong>Log Out</strong>
+          <strong>Home</strong>
         </button>
-      </form>
+        <form method='GET' action="/">
+          <button class="button">
+            <strong>Log Out</strong>
+          </button>
+        </form>
+      </div>
+
     </div>
   </nav>
   <section class="section">
     <div class="container">
       <br>
-      <p class="content title">Automation Tests</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://www.tesults.com/results/rsp/view/status/project/35c8ebfa-4dc4-465b-8554-31c3f2d2f4a8/group/production"
-            target="_blank">
-            <p class="title">Production Test Runs</p>
-            <p class="subtitle">Click to open Tesults dashboard with Production jobs</p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://www.tesults.com/results/rsp/view/status/project/35c8ebfa-4dc4-465b-8554-31c3f2d2f4a8/group/qa"
-            target="_blank">
-            <p class="title">QA Test Runs</p>
-            <p class="subtitle is-multiline">Click to open Tesults dashboard with QA jobs</p>
-          </a>
+      <div class="level">
+        <p class="content title is-spaced">Automation Test Execution - Edit landing.json</p>
+        <div class="buttons is-right">
+          <button class="button is-link is-light" onclick="history.back()">Back</button>
         </div>
       </div>
-    </div>
-    </div>
-    <hr>
-
-    <div class="container">
-      <p class="content title">Automation Utilities</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://page-object-generator.herokuapp.com/">
-            <p class="title">
-              Page Object Generator
-            </p>
-            <p class="subtitle is-multiline">
-              Start building page objects in a jiffy
-            </p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4" disabled>
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable">
-            <p class="title">
-              Quiz Data Generator
-            </p>
-            <p class="subtitle is-multiline">
-              Create data file for native questions
-            </p>
-          </a>
-        </div>
+      <div class="tabs is-boxed is-medium">
+        <ul>
+          <li class="is-active"><a>Suite1</a></li>
+          <li><a>Suite2</a></li>
+        </ul>
       </div>
+
+      <p class="content subtitle">Suite Name: Validation of Landing Page Features and Content (English)</p>
+
+      <article class="message">
+        <div class="message-header has-background-grey">
+          <p>Before</p>
+        </div>
+        <div class="message-body">
+          <div class="table-container">
+            <table class="table is-narrow is-hoverable" style="width: 100%">
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="message">
+        <div class="message-header has-background-grey">
+          <p>Before Each</p>
+        </div>
+        <div class="message-body">
+          <div class="table-container">
+            <table class="table is-narrow is-hoverable" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>description</th>
+                  <th>testFile</th>
+                  <th>dataFile</th>
+                  <th>jsonPath</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>launchUrl</td>
+                  <td>-</td>
+                  <td>./engageAutomation/core/runner/launchUrl.js</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-header has-background-grey">
+          <p>Test</p>
+        </div>
+        <div class="message-body">
+          <div class="table-container">
+            <table class="table is-narrow is-hoverable" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>description</th>
+                  <th>testFile</th>
+                  <th>dataFile</th>
+                  <th>jsonPath</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ENG_LAND_TC_1</td>
+                  <td>-</td>
+                  <td>./test/engageExperienceApp/landing.test.js</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>ENG_LAND_TC_5</td>
+                  <td>-</td>
+                  <td>./test/engageExperienceApp/landing.test.js</td>
+                  <td>./testResources/testcaseData/difusionExperienceApp/qa/appLangEN.json</td>
+                  <td>engage.appContent.landing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-header has-background-grey">
+          <p>After Each</p>
+        </div>
+        <div class="message-body">
+          <div class="table-container">
+            <table class="table is-narrow is-hoverable" style="width: 100%">
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-header has-background-grey">
+          <p>After</p>
+        </div>
+        <div class="message-body">
+          <div class="table-container">
+            <table class="table is-narrow is-hoverable" style="width: 100%">
+            </table>
+          </div>
+        </div>
+      </article>
     </div>
     <hr>
-
-    <div class="container">
-      <p class="content title">Test Management Tool</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://compro.atlassian.net/jira/dashboards/12118" target="_blank">
-            <p class="title">Engage JIRA</p>
-            <p class="subtitle">Click to launch the bug reporting tool</p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://compro.qatouch.com/projects" target="_blank">
-            <p class="title">QA Touch</p>
-            <p class="subtitle">Click to launch the test case management tool</p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-grey-light has-text-centered is-unselectable"
-            href="">
-            <p class="title">Test Cases</p>
-            <p class="subtitle">View test cases for Engage and Backoffice app</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-
-    </div>
   </section>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        © 2022 Compro Technologies All rights reserved
+        © 2022 Compro Technologies | All Rights Reserved
       </p>
     </div>
   </footer>
 </body>
+<script>
+  const fileInput = document.querySelector('#file_upload input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#file_upload .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }
+</script>
 
 </html>

@@ -7,8 +7,9 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Home - Engage QA Tools</title>
+  <title>Engage QA Tools</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -112,104 +113,166 @@
           </div>
         </div>
       </div>
-      <form method='GET' action="/">
+      <div class="buttons">
         <button class="button">
-          <strong>Log Out</strong>
+          <strong>Home</strong>
         </button>
-      </form>
+        <form method='GET' action="/">
+          <button class="button">
+            <strong>Log Out</strong>
+          </button>
+        </form>
+      </div>
+
     </div>
   </nav>
   <section class="section">
     <div class="container">
       <br>
-      <p class="content title">Automation Tests</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://www.tesults.com/results/rsp/view/status/project/35c8ebfa-4dc4-465b-8554-31c3f2d2f4a8/group/production"
-            target="_blank">
-            <p class="title">Production Test Runs</p>
-            <p class="subtitle">Click to open Tesults dashboard with Production jobs</p>
-          </a>
+      <div class="level">
+        <p class="content title is-spaced">Automation Test Execution</p>
+        <div class="buttons is-right">
+          <button class="button is-link is-light" onclick="history.back()">Back</button>
         </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://www.tesults.com/results/rsp/view/status/project/35c8ebfa-4dc4-465b-8554-31c3f2d2f4a8/group/qa"
-            target="_blank">
-            <p class="title">QA Test Runs</p>
-            <p class="subtitle is-multiline">Click to open Tesults dashboard with QA jobs</p>
+      </div>
+      <br>
+      <div class="field has-addons">
+        <div class="control has-icons-left is-expanded">
+          <input type="text" id="search" class="input"
+            placeholder="Search for the test file containing specific text e.g landing" disabled>
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+        <div class="control">
+          <a class="button is-info" disabled>
+            Search
           </a>
         </div>
       </div>
-    </div>
-    </div>
-    <hr>
-
-    <div class="container">
-      <p class="content title">Automation Utilities</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://page-object-generator.herokuapp.com/">
-            <p class="title">
-              Page Object Generator
-            </p>
-            <p class="subtitle is-multiline">
-              Start building page objects in a jiffy
-            </p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4" disabled>
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable">
-            <p class="title">
-              Quiz Data Generator
-            </p>
-            <p class="subtitle is-multiline">
-              Create data file for native questions
-            </p>
-          </a>
-        </div>
+      <br>
+      <div class="table-container">
+        <table class="table is-narrow is-hoverable" style="width: 100%">
+          <thead>
+            <tr>
+              <th>
+                <label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </th>
+              <th>Module Name</th>
+              <th>File Name</th>
+              <th>Test Cases</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Add Book</td>
+              <td>addBookTest.json</td>
+              <td>15</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Browse</td>
+              <td>browseTest.json</td>
+              <td>32</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Landing</td>
+              <td>landingTest.json</td>
+              <td>5</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Activity Player</td>
+              <td>nativeQuizTest.json</td>
+              <td>73</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Playlist</td>
+              <td>playlistTest.json</td>
+              <td>10</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="checkbox" disabled>
+                  <input type="checkbox" disabled>
+                </label>
+              </td>
+              <td>Settings</td>
+              <td>settingsTest.json</td>
+              <td>18</td>
+              <td>
+                <a>Edit</a>
+                &nbsp;
+                <a>Run</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <hr>
-
-    <div class="container">
-      <p class="content title">Test Management Tool</p>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://compro.atlassian.net/jira/dashboards/12118" target="_blank">
-            <p class="title">Engage JIRA</p>
-            <p class="subtitle">Click to launch the bug reporting tool</p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
-            href="https://compro.qatouch.com/projects" target="_blank">
-            <p class="title">QA Touch</p>
-            <p class="subtitle">Click to launch the test case management tool</p>
-          </a>
-        </div>
-        <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-grey-light has-text-centered is-unselectable"
-            href="">
-            <p class="title">Test Cases</p>
-            <p class="subtitle">View test cases for Engage and Backoffice app</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-
-    </div>
   </section>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        © 2022 Compro Technologies All rights reserved
+        © 2022 Compro Technologies | All Rights Reserved
       </p>
     </div>
   </footer>
 </body>
+<script>
+  const fileInput = document.querySelector('#file_upload input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#file_upload .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }
+</script>
 
 </html>
