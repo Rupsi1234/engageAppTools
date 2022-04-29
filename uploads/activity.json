@@ -1,0 +1,362 @@
+{
+  "_id": "6172ac5652f8536ceb9c7b19",
+  "displayType": "master",
+  "workspace": {
+    "default": {}
+  },
+  "status": "in-process",
+  "systemMeta": {
+    "publish": {
+      "requestReceived": false,
+      "publishId": "difusionqa-pub-3235",
+      "publishedOn": "2021-11-24T11:30:07.001Z"
+    },
+    "learningObject": {
+      "status": "success",
+      "lastPosted": "2022-03-17T12:58:36.369Z"
+    },
+    "isDeleted": false,
+    "schemaVersion": "2.0",
+    "revision": 3,
+    "state": "published",
+    "clientId": "4dw2a4",
+    "created": {
+      "userId": "52b7a199-0a3f-4b44-86b3-34e3b6143b12",
+      "timestamp": "2021-10-22T12:19:34.053Z"
+    },
+    "lastModified": {
+      "userId": "52b7a199-0a3f-4b44-86b3-34e3b6143b12",
+      "timestamp": "2021-11-24T11:29:43.590Z"
+    },
+    "itemIndex": 2631,
+    "assetsBasePath": "https://backoffice-activityauthor-qa-authorstore-difusion.s3.us-east-1.amazonaws.com"
+  },
+  "type": "activity",
+  "model": "bank",
+  "editor": "bank-activityeditor",
+  "player": "bank-activityplayer",
+  "toolName": "paint",
+  "toolVersion": "1.0",
+  "itemMeta": {
+    "title": "Native LO 2",
+    "description": "",
+    "tags": {},
+    "gradingType": "auto",
+    "displayMode": "quiz",
+    "visualTheme": "simple"
+  },
+  "itemBody": {
+    "questions": [
+      {
+        "placement": "external-meta",
+        "id": "difusionqa-dev-2632",
+        "meta": {
+          "stimulus": {
+            "content": {
+              "type": "item-xhtml-ck",
+              "data": "<h2><strong>Lisez et sélectionnez vos réponses:</strong></h2>"
+            }
+          },
+          "title": "Untitled Question",
+          "model": "mcqsr",
+          "editor": "mcqsr-itemeditor",
+          "type": "item",
+          "status": "in-process",
+          "score": 1,
+          "gradingType": ""
+        }
+      }
+    ]
+  },
+  "itemId": "difusionqa-dev-2631",
+  "itemResources": {},
+  "itemFragments": {
+    "difusionqa-dev-2632": {
+      "itemId": "difusionqa-dev-2632",
+      "data": {
+        "_id": "6172ac7a52f8536ceb9c7b1b",
+        "displayType": "embedded",
+        "workspace": {
+          "default": {}
+        },
+        "status": "in-process",
+        "systemMeta": {
+          "publish": {
+            "requestReceived": false,
+            "publishId": "difusionqa-pub-3236",
+            "publishedOn": "2021-11-24T11:30:04.162Z"
+          },
+          "learningObject": {
+            "status": "Not exported"
+          },
+          "isDeleted": false,
+          "schemaVersion": "2.0",
+          "revision": 3,
+          "state": "published",
+          "clientId": "4dw2a4",
+          "created": {
+            "userId": "52b7a199-0a3f-4b44-86b3-34e3b6143b12",
+            "timestamp": "2021-10-22T12:20:10.831Z"
+          },
+          "lastModified": {
+            "userId": "52b7a199-0a3f-4b44-86b3-34e3b6143b12",
+            "timestamp": "2021-11-24T11:29:43.588Z"
+          },
+          "itemIndex": 2632,
+          "assetsBasePath": "https://backoffice-activityauthor-qa-authorstore-difusion.s3.us-east-1.amazonaws.com"
+        },
+        "itemId": "difusionqa-dev-2632",
+        "type": "item",
+        "model": "mcqsr",
+        "editor": "mcqsr-itemeditor",
+        "player": "multi-mcqsr-itemplayer",
+        "toolName": "paint",
+        "toolVersion": "1",
+        "itemMeta": {
+          "title": "Untitled Question",
+          "description": "Description",
+          "tags": {
+            "domain": "",
+            "difficulty": "",
+            "custom": [
+              ""
+            ]
+          },
+          "skill": "",
+          "learningObjective": "",
+          "targetAudience": ""
+        },
+        "itemBody": {
+          "instruction": {
+            "content": {
+              "type": "item-xhtml-ck",
+              "data": "<p><strong>Dans cette activité</strong></p><p>Lisez des informations sur la prospérité de la ville de Nantes et voyez l'image d'un riche résident, armateur et marchand. Sur la base de ces informations, répondez aux questions suivantes.</p>"
+            }
+          },
+          "stimulus": {
+            "content": {
+              "type": "item-xhtml-ck",
+              "data": "<h2><strong>Lisez et sélectionnez vos réponses:</strong></h2>"
+            }
+          },
+          "media": {
+            "content": {
+              "type": "item-media",
+              "data": {
+                "type": "image",
+                "alt": "Dominique-René Deurbroucq, armateur et négociant nantais, à sa table de travail",
+                "title": "Dominique-René Deurbroucq, armateur et négociant nantais, à sa table de travail",
+                "url": "",
+                "xhtml": "<img data-height='538' data-width='413' name='9MKq45x2V-Screenshot_2021-10-22_at_9.50.09_AM.png' size='557152' src='difusionqa-dev-2632/resources/zu5FpU9EE/zu5FpU9EE.png'  size= />"
+              }
+            }
+          },
+          "prompt": {
+            "content": {
+              "type": "item-xhtml-ck",
+              "data": "<p><strong>Nantes 2 s’embellit et s’agrandit</strong></p><p>Le quartier de La Fosse est sans contredit l’endroit le plus agréable, le plus riche et le plus actif de Nantes. Il commence à la place de la Bourse et s’étend sur une longueur de cinq cents toises. Ce qui ajoute à l’agrément de ce quartier, c’est l’admirable vue sur la Loire, ouverte de navires et de bateaux. Les maisons que l’on voit le long de ces quais répondent à l’opulence de ceux qui les habitent. Elles sont toutes bâties en pierre avec ferrades et balcons. Nous devons rendre justice au zèle de M. le Maire : car c’est par ses soins que la ville a pris une nouvelle face et s’est accrue d’un quart. Les maisons nouvelles qu’on bâtit tous les jours sont à moitié faites que le rez-de-chaussée est déjà occupé. Encore vingt ans de paix et d’un commerce actif, Nantes égalera, si elle ne les surpasse par la magnificence et l’étendue, les plus belles villes de l’Europe.</p>"
+            }
+          },
+          "questions": [
+            {
+              "placement": "embedded",
+              "id": "sub-question-1",
+              "data": {
+                "stimulus": {
+                  "content": {
+                    "type": "item-xhtml-ck",
+                    "data": "<p>Quelle activité semble être à l’origine de la richesse de Nantes ?</p>"
+                  }
+                },
+                "media": {
+                  "content": {
+                    "type": "item-media",
+                    "data": {
+                      "type": "",
+                      "alt": "",
+                      "title": "",
+                      "url": "",
+                      "xhtml": ""
+                    }
+                  }
+                },
+                "options": [
+                  {
+                    "id": "O1",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Commerce"
+                    }
+                  },
+                  {
+                    "id": "O2",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Construction"
+                    }
+                  },
+                  {
+                    "id": "O3",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Construction de navires"
+                    }
+                  },
+                  {
+                    "id": "O4",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Toutes ces"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "placement": "embedded",
+              "id": "sub-question-2",
+              "data": {
+                "stimulus": {
+                  "content": {
+                    "type": "item-xhtml-ck",
+                    "data": "<p>Quels métiers profi tent de cet enrichissement ?</p>"
+                  }
+                },
+                "media": {
+                  "content": {
+                    "type": "item-media",
+                    "data": {
+                      "type": "",
+                      "alt": "",
+                      "title": "",
+                      "url": "",
+                      "xhtml": ""
+                    }
+                  }
+                },
+                "options": [
+                  {
+                    "id": "O1",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Commerce"
+                    }
+                  },
+                  {
+                    "id": "O2",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Construction"
+                    }
+                  },
+                  {
+                    "id": "O3",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Construction de navires"
+                    }
+                  },
+                  {
+                    "id": "O4",
+                    "content": {
+                      "type": "item-text",
+                      "data": "Toutes ces"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "viewLabels": {
+            "instructionHeading": "In this activity",
+            "selectOne": ""
+          },
+          "validations": [
+            {
+              "validationId": "v1",
+              "responseContainer": "sub-question-1",
+              "correctResponse": "O1",
+              "operator": "id_equals"
+            },
+            {
+              "validationId": "v2",
+              "responseContainer": "sub-question-2",
+              "correctResponse": "O2",
+              "operator": "id_equals"
+            }
+          ],
+          "scoring": {
+            "rules": [
+              {
+                "type": "sum",
+                "score": 1,
+                "rules": [
+                  {
+                    "type": "compute",
+                    "validationId": "v1",
+                    "score": 0
+                  },
+                  {
+                    "type": "compute",
+                    "validationId": "v2",
+                    "score": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "preferences": {
+            "layout": {
+              "orientation": "left-right"
+            },
+            "ariaLabels": {
+              "questionLabel": "Multiple Choice Question",
+              "directionLabel": "Title",
+              "HelpTextLabel": "Instructions",
+              "PromptLabel": "Additional Prompts",
+              "ResponseLabel": "Response Options",
+              "QuestionItemLabel": "Question Item"
+            },
+            "visualTheme": "simple"
+          },
+          "feedback": {
+            "general": {
+              "content": {
+                "type": "item-text",
+                "data": ""
+              }
+            },
+            "correct": {
+              "content": {
+                "type": "item-text",
+                "data": ""
+              }
+            },
+            "incorrect": {
+              "content": {
+                "type": "item-text",
+                "data": ""
+              }
+            }
+          },
+          "hints": []
+        },
+        "itemResources": {
+          "zu5FpU9EE": {
+            "resourceId": "zu5FpU9EE",
+            "type": "image",
+            "systemAttribs": {
+              "fileName": "9MKq45x2V-Screenshot_2021-10-22_at_9.50.09_AM.png",
+              "uploadedOn": "2021-11-24T11:27:31.317Z",
+              "fileSize": 557152,
+              "uri": "difusionqa-dev-2632/resources/zu5FpU9EE/zu5FpU9EE.png"
+            }
+          }
+        },
+        "itemFragments": null,
+        "__v": 0
+      }
+    }
+  },
+  "__v": 0
+}

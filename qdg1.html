@@ -140,9 +140,6 @@
         <div class="file has-name is-fullwidth is-right">
           <label class="file-label">
             <input class="file-input" type="file" name="sampleFile" required>
-            <span class="file-name">
-              No file uploaded
-            </span>
             <span class="file-cta">
               <span class="file-icon">
                 <i class="fas fa-upload"></i>
@@ -151,36 +148,43 @@
                 Choose a file…
               </span>
             </span>
+            <span class="file-name">
+              No file uploaded
+            </span>
           </label>
         </div>
         <p class="help is-danger">
           This field is required
         </p>
         <br>
-        <br>
-        <div class="field has-addons">
-          <p class="control is-expanded">
-            <input id="inputFile" name="inputFile" class="input" type="text" placeholder="Enter name of the output file"
-              required>
-          </p>
-          <p class="control">
-            <a class="button is-static">
-              .json
-            </a>
-          </p>
-        </div>
-        <p class="help is-danger">
-          This field is required
-        </p>
-        <br>
-        <button class="button is-dark" type='submit'>Next</button>
+
+        <button class="button is-dark" type='submit'>Upload</button>
         <br>
       </form>
     </div>
-    <hr>
-
-
   </section>
+  <section class="section">
+    <div class="container">
+    <form action='/getvalue'>
+      <div class="field has-addons">
+        <p class="control is-expanded">
+          <input id="inputFile" name="inputFile" class="input" type="text" placeholder="Enter name of the output file"
+            required>
+        </p>
+      </div>
+      <p class="help is-danger">
+        This field is required
+      </p>
+      
+      <br>
+
+      <button class="button is-dark" type='submit'>Next</button>
+      <br>
+    </form>
+    </div>
+  </section>
+  
+  <hr>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
