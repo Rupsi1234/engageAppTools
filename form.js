@@ -24,18 +24,17 @@ app.get('/homepage', function (request, response) {
     response.sendFile(__dirname + "/home.html");
 }),
 
-    app.get('/quiz', function (request, response) {
+app.get('/quiz', function (request, response) {
         response.sendFile(__dirname + "/qdg1.html");
     }),
-
-    app.post('/upload', function (req, res) {
+app.post('/upload', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
             res.status(400).send('No files were uploaded.');
             return;
         }
 
         console.log('req.files >>>', req.files); // eslint-disable-line
-
+        res.sendFile(__dirname + "/qdg2.html");
         sampleFile = req.files.sampleFile;
 
         uploadPath = __dirname + '/uploads/' + sampleFile.name;
@@ -89,31 +88,21 @@ app.get('/homepage', function (request, response) {
                     quizObj.quizName.question[qindex].scenario2 = quizObj.quizName.question[qindex].answerKey;
                 })
                 quizObj.quizName.passScore = Math.round(quizObj.quizName.totalScore * 0.7 * 10) / 10;
-
+                fs.writeFile(__dirname + '/download/' + sampleFile.name , jsonFormat(quizObj, {
+                    type: 'space',
+                    size: 2
+                }), function (err) {
+                    if (err) throw err;
+                    console.log('quiz data json saved at output path');
+                });
             })
         })
     })
-app.get("/getvalue", function (request, response) {
-    var inputFile = request.query.inputFile;
-    fs.writeFile(__dirname + '/download/' + inputFile + ".json", jsonFormat(quizObj, {
-        type: 'space',
-        size: 2
-    }), function (err) {
-        if (err) throw err;
-        console.log('quiz data json saved at output path');
-    });
-
-    response.sendFile(__dirname + "/qdg2.html");
-})
 app.get('/single', function (req, res) {
     console.log('single file');
     // Download function provided by express
-    var text = req.headers.referer;
-    var mySubString = text.substring(
-        text.indexOf("=") + 1
-        //text.lastIndexOf("&pageHeader")
-    );
-    res.download(__dirname + '/download/' + mySubString + '.json', function (err) {
+    console.log(sampleFile.name)
+    res.download(__dirname + '/download/' + sampleFile.name  , function (err) {
         if (err) {
             console.log(err);
         }
