@@ -29,7 +29,7 @@ app.get('/quiz', function (request, response) {
     }),
 app.post('/upload', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
-            res.status(400).send('No files were uploaded.');
+            res.status(400).send('No files were uploaded please retry.');
             return;
         }
 
