@@ -9,7 +9,7 @@
             {
                 "id": "launchUrl",
                 "description": "",
-                "testFile": "./core/runner/launchUrl.js",
+                "testFile": "./app/core/runner/launchUrl.js",
                 "testData": []
             }
         ],
