@@ -1,0 +1,27 @@
+{
+    "Suite1": {
+        "Name": "Validation of Landing Page Features and Content (English)",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/engageExperienceApp/EngageTCRepository.json"
+        ],
+        "Before": [],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./engageAppTools/core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Test": [
+            {
+                "id": "ENG_LAND_TC_1",
+                "description": "",
+                "testFile": "./test/engageExperienceApp/landing.test.js",
+                "testData": []
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    }
+}

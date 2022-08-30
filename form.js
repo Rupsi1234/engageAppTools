@@ -10,7 +10,7 @@ const open = require('open');
 const jsonFormat = require('json-format');
 var app = express();
 app.use(fileUpload());
-
+var shell = require("shelljs");
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/login.html");
 });
@@ -26,10 +26,17 @@ app.get('/homepage', function (request, response) {
     response.sendFile(__dirname + "/home.html");
 }),
 
-app.get('/quiz', function (request, response) {
+    app.get('/quiz', function (request, response) {
         response.sendFile(__dirname + "/qdg1.html");
     }),
-app.post('/upload', function (req, res) {
+    app.get('/test', function (request, response) {
+        console.log("rupsi")
+        var response1=shell.exec("npm run landingFeatureTest");
+        console.log(response1)
+        if (response1.length>0)
+        response.send(response1);
+    }),
+    app.post('/upload', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
             res.status(400).send('No files were uploaded please retry.');
             return;
@@ -89,9 +96,9 @@ app.post('/upload', function (req, res) {
                         // "id": "",
                     }
                     //quizObj.quizName.question[qindex].id = loJson.itemBody.questions[qindex].id;
-            
+
                     console.log(loJson.itemBody.questions[qindex].id);
-            
+
                     quizObj.quizName.question[qindex].number = parseInt(qindex) + 1;
                     quizObj.quizName.name = loJson.itemMeta.title;
                     var quesJson = loJson.itemFragments[loJson.itemBody.questions[qindex].id];
@@ -100,13 +107,13 @@ app.post('/upload', function (req, res) {
                     quizObj.quizName.question[qindex].instructionText = quesJson.data.itemBody.instruction.content.data.replace(/(<([^>]+)>)/ig, '') == "" ? null : quesJson.data.itemBody.instruction.content.data.replace(/(<([^>]+)>)/ig, '');
                     if (quesJson.data.itemBody.prompt != null)
                         quizObj.quizName.question[qindex].promptText = (quesJson.data.itemBody.prompt.content.data.replace(/(<([^>]+)>)/ig, '')) == "" ? null : quesJson.data.itemBody.prompt.content.data.replace(/(<([^>]+)>)/ig, '');
-            
+
                     quizObj.quizName.question[qindex].mediaType = (quesJson.data.itemBody.media.content.data.type) == "" ? null : (quesJson.data.itemBody.media.content.data.type);
                     quizObj.quizName.question[qindex] = getQuesdetail(quesJson, quizObj.quizName.question[qindex]);
                     //quizObj.quizName.question[qindex].scenario1 = quizObj.quizName.question[qindex].answerKey;
                     //quizObj.quizName.question[qindex].scenario2 = quizObj.quizName.question[qindex].answerKey;
                     quizObj.quizName.question[qindex].subQues = quizObj.quizName.question[qindex].subQues;
-            
+
                     if (quesJson.data.itemBody.viewLabels != null) {
                         quizObj.quizName.question[qindex].viewLabels = {
                             instructionHeading: quesJson.data.itemBody.viewLabels.instructionHeading || null,
@@ -124,8 +131,8 @@ app.post('/upload', function (req, res) {
                     // quizObj.quizName.totalScore = quizObj.quizName.totalScore + quizObj.quizName.question[qindex].maxScore;
                     // quizObj.quizName.question[qindex].maxScore = loJson.itemBody.questions[qindex].meta.score;
                 })
-               // quizObj.quizName.passScore = Math.round(quizObj.quizName.totalScore * 0.7 * 10) / 10;
-                fs.writeFile(__dirname + '/download/' + "output.json" , jsonFormat(quizObj, {
+                // quizObj.quizName.passScore = Math.round(quizObj.quizName.totalScore * 0.7 * 10) / 10;
+                fs.writeFile(__dirname + '/download/' + "output.json", jsonFormat(quizObj, {
                     type: 'space',
                     size: 2
                 }), function (err) {
@@ -139,7 +146,7 @@ app.get('/single', function (req, res) {
     console.log('single file');
     // Download function provided by express
     //console.log(sampleFile.name)
-    res.download(__dirname + '/download/' + "output.json"  , function (err) {
+    res.download(__dirname + '/download/' + "output.json", function (err) {
         if (err) {
             console.log(err);
         }

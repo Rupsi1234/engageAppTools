@@ -1,2 +1,8 @@
+ node_modules
+    package-lock.json
+    allure-results
+    output
+    logs
+allure-results
+package-lock
 node_modules
-package-lock.json

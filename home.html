@@ -178,7 +178,9 @@
 
     <div class="container">
       <p class="content title">Test Management Tool</p>
+      <form action="/test" method="get" id="quiz-form">
       <div class="tile is-ancestor">
+  
         <div class="tile is-parent is-4">
           <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
             href="https://compro.atlassian.net/jira/dashboards/12118" target="_blank">
@@ -186,6 +188,7 @@
             <p class="subtitle">Click to launch the bug reporting tool</p>
           </a>
         </div>
+      
         <div class="tile is-parent is-4">
           <a class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable"
             href="https://compro.qatouch.com/projects" target="_blank">
@@ -194,13 +197,14 @@
           </a>
         </div>
         <div class="tile is-parent is-4">
-          <a class="tile is-child notification has-background-grey-lighter has-text-grey-light has-text-centered is-unselectable"
-            href="">
+          <button class="tile is-child notification has-background-grey-lighter has-text-centered is-clickable">
             <p class="title">Test Cases</p>
             <p class="subtitle">View test cases for Engage and Backoffice app</p>
-          </a>
+          </button>
         </div>
+    
       </div>
+    </form>
     </div>
     <hr>
 
