@@ -5,7 +5,7 @@
                 "maxInstances": 5,
                 "browserName": "chrome",
                 "goog:chromeOptions": {
-                    "args": ["--log-level=3", "--headless", "--no-sandbox","--disable-dev-shm-usage"]
+                    "args": ["--log-level=3", "--headless", "--no-sandbox","--disable-dev-shm-usage","--disable-gpu"]
                 }
             }
         ],
