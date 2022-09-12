@@ -105,35 +105,7 @@ app.get('/homepage', function (request, response) {
 
     }),
     //app.get('/view', function (request, response) {
-    app.post('/view', function (req, res) {
-        res.render('quiz2', { name: req.body.name });
-        // });
-        console.log(request)
-        console.log(response)
-        app.use(
-            cors({
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-            })
-        );
-        const { readFileSync } = require('fs')
-        var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + landingTest + ".json"));
-
-        /* app.use(
-             cors({
-               headers: {
-                 "Content-Type": "application/json"
-               },
-            
-             })
-           );
- */
-        console.log(loadUser)
-        response.json(loadUser);
-
-    }),
+ 
     app.get('/quiz2', function (req, response) {
         fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
             //handling error
@@ -160,9 +132,9 @@ app.get('/homepage', function (request, response) {
                 }
                 console.log("Running the test : " + testName)
                 var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
-              //  response.send(response1);
-              console.log(__dirname + "/output/reports/TestReports/index.html")
-              response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+                response.send(response1);
+            //  console.log(__dirname + "/output/reports/TestReports/index.html")
+             // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
             }
             /*       if (response1.length > 0)
                      file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
