@@ -113,7 +113,7 @@ app.get('/homepage', function (request, response) {
                 return console.log('Unable to scan directory: ' + err);
             }
             executionFile = Object.values(req.query);
-            var i = 0;
+            var i = 0, testName;
             if ((req.originalUrl).includes("View")) {
                 const { readFileSync } = require('fs')
                 var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + executionFile[0] + ".json"));
