@@ -98,7 +98,7 @@ app.get('/homepage', function (request, response) {
 
         });
         file3.write("<br>")
-        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
+        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 3px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
 
 
         // file3.write("<form  action=\"/view\" method=\"post\">")
