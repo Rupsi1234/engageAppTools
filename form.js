@@ -101,7 +101,7 @@ app.get('/homepage', function (request, response) {
 
     }),
     app.get('/test', function (request, response) {
-        response.sendFile(__dirname + "\\checkbox.html");
+        response.sendFile(__dirname + "/checkbox.html");
 
     }),
     //app.get('/view', function (request, response) {
