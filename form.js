@@ -6,18 +6,7 @@ var quizObj
 var fs = require('fs');
 const fileUpload = require('express-fileupload');
 const open = require('open');
-var cors = require('cors')
-var bodyParser = require('body-parser')
 
-var corsOptions = {
-    origin: function (origin, callback) {
-        // db.loadOrigins is an example call to load
-        // a list of origins from a backing database
-        db.loadOrigins(function (error, origins) {
-            callback(error, origins)
-        })
-    }
-}
 
 
 
@@ -36,16 +25,14 @@ var shell = require("shelljs");
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/login.html");
 });
-const path = require('path');
+
 app.listen(Port, function () {
     console.log('Express server listening on port ', Port); // eslint-disable-line
 });
 app.listen(8080);
 open('http://localhost:8080');
 console.log("Please launch http://localhost:8080 in your browser url/ or direct url");
-app.get('/products/:id', cors(corsOptions), function (req, res, next) {
-    res.json({ msg: 'This is CORS-enabled for an allowed domain.' })
-})
+
 app.get('/homepage', function (request, response) {
     response.sendFile(__dirname + "/home.html");
 
@@ -98,7 +85,7 @@ app.get('/homepage', function (request, response) {
 
         });
         file3.write("<br>")
-        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 3px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
+        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
 
 
         // file3.write("<form  action=\"/view\" method=\"post\">")
