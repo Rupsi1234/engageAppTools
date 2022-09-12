@@ -8,7 +8,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {
@@ -600,7 +600,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {
@@ -1149,7 +1149,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {
@@ -1559,7 +1559,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {
@@ -2087,7 +2087,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {
@@ -2283,7 +2283,7 @@
       {
         "id": "launchUrl",
         "description": "",
-        "testFile": "./engageAutomation/core/runner/launchUrl.js",
+        "testFile": "./core/runner/launchUrl.js",
         "testData": []
       },
       {

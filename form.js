@@ -6,36 +6,190 @@ var quizObj
 var fs = require('fs');
 const fileUpload = require('express-fileupload');
 const open = require('open');
+var cors = require('cors')
+var bodyParser = require('body-parser')
+
+var corsOptions = {
+    origin: function (origin, callback) {
+        // db.loadOrigins is an example call to load
+        // a list of origins from a backing database
+        db.loadOrigins(function (error, origins) {
+            callback(error, origins)
+        })
+    }
+}
+
+
+
 //use the application off of express.
 const jsonFormat = require('json-format');
 var app = express();
 app.use(fileUpload());
+/*app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    next();
+ }) 
+*/
 var shell = require("shelljs");
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/login.html");
 });
-
-
+const path = require('path');
 app.listen(Port, function () {
     console.log('Express server listening on port ', Port); // eslint-disable-line
 });
 app.listen(8080);
 open('http://localhost:8080');
 console.log("Please launch http://localhost:8080 in your browser url/ or direct url");
+app.get('/products/:id', cors(corsOptions), function (req, res, next) {
+    res.json({ msg: 'This is CORS-enabled for an allowed domain.' })
+})
 app.get('/homepage', function (request, response) {
     response.sendFile(__dirname + "/home.html");
+
+    //joining path of directory 
+    //const directoryPath = path.join(__dirname, 'Documents');
+    //passsing directoryPath and callback function
+    file3 = fs.createWriteStream(__dirname + '/checkbox.html');
+    console.log(__dirname + '/checkbox.html')
+    fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/qa', function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        //listing all files using forEach
+        file3.write("<!DOCTYPE html><html>")
+        file3.write("<head> <meta charset=\"utf-8\">\ <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta http-equiv=\"Cache-Control\" content=\"no-cache, no-store, must-revalidate\" />" +
+            "<meta http-equiv=\"Pragma\" content=\"no-cache\" /><meta http-equiv=\"Expires\" content=\"0\" /> <title>Login - Engage QA Tools</title><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css\">" +
+            "</head>")
+        file3.write("<body>")
+        file3.write("class=\"has-navbar-fixed-top\">    <nav class=\"navbar has-background-grey-lighter is-fixed-top is-spaced has-shadow\" role=\"navigation\" " +
+            "aria-label=\"main navigation\"> <div class=\"navbar-brand\"><div class=\"navbar-item\"> <img src=\"https://config-qa.engage.comprodls.com/4eabb7df/difusion/expapp/ootb/v25/assets/images/engage_app.svg\">  </div>" +
+            "<a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\" data-target=\"navbarBasic\">" +
+            "<span aria-hidden=\"true\"></span><span aria-hidden=\"true\"></span> <span aria-hidden=\"true\"></span></a> </div>" +
+            "<div id=\"navbarBasic\" class=\"navbar-menu\" ><div class=\"navbar-start\">" +
+            "<div class=\"navbar-item has-dropdown is-hoverable\"><a class=\"navbar-link\"> App URLs</a>" +
+            "<div class=\"navbar-dropdown\"><a class=\"navbar-item\" href=\"https://engage-dev1.comprodls.com/\" target=\"_blank\"> Engage - dev1 </a>" +
+            "<a class=\"navbar-item\" href=\"https://engage-difusion-dev2.comprodls.com/\" target=\"_blank\">Engage - dev2</a>" +
+            "<a class=\"navbar-item\" href=\"https://engage-dev2.comprodls.com/\" target=\"_blank\">Engage - dev2 (generic)</a>" +
+            "<a class=\"navbar-item\" href=\"https://backoffice-difusion-dev1.comprodls.com/\" target=\"_blank\"> Backoffice - dev1 </a>" +
+            "<a class=\"navbar-item\" href=\"https://backoffice-difusion-dev2.comprodls.com/\" target=\"_blank\">Backoffice - dev2</a></div></div>" +
+            "<div class=\"navbar-item has-dropdown is-hoverable\"><a class=\"navbar-link\">Accessibility </a>" +
+            "<div class=\"navbar-dropdown\"><a class=\"navbar-item\" href=\"https://www.w3.org/WAI/standards-guidelines/wcag/\" target=\"_blank\">W3C Guidelines</a>" +
+            "<a class=\"navbar-item\" href=\"https://docs.google.com/spreadsheets/d/1aJ2VL4rhSfHGFt2OtXKhfvH0QlMwq5eOfnGUUVTcht4/edit#gid=445513750\"target=\"_blank\">Guidelines for Engage  </a>" +
+            "<a class=\"navbar-item\" href=\"https://docs.google.com/spreadsheets/d/1CMQ3C4LIoaNhRzWaN0FOfg3lQJwb3ubqqigadJoNdqc/edit#gid=0\" target=\"_blank\"> QA Status</a>" +
+            "<a class=\"navbar-item\" href=\"https://accessibilityinsights.io/en/downloads/\" target=\"_blank\"> Accessibility Tool </a></div></div>" +
+            "<div class=\"navbar-item has-dropdown is-hoverable\"><a class=\"navbar-link\">More </a>" +
+            "<div class=\"navbar-dropdown\"> <a class=\"navbar-item\" href=\"https://projects.invisionapp.com/share/R510S1Q7X94A#/screens/454803500?browse\"  target=\"_blank\">Engage IR Mocks</a>" +
+            "<a class=\"navbar-item\" href=\"https://semaphoreci.com/comprodlsengage\" target=\"_blank\">Semaphore</a>" +
+            "<a class=\"navbar-item\" href=\"https://bitbucket.org/dashboard/repositories\" target=\"_blank\">Bitbucket</a>" +
+            "<hr class=\"navbar-divider\"><a class=\"navbar-item has-text-grey-light\" disabled>Contact</a></div></div> </div>" +
+            "<form method='GET' action=\"/\"> <button class=\"button\"><strong>Log Out</strong></button></form> </div ></nav ><br><br> <section class=\"section\">")
+        file3.write("<form  action=\"/quiz2\" method=\"get\">")
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            var res = []
+            res = file.split(".", 2);
+            file3.write("<input style= \"margin-left: 2em\"; type=\"checkbox\" id=\"" + res[0] + " \"name= \"" + res[0] + " \"value= \"" + res[0] + "\">")
+            file3.write(" " + file)
+            file3.write("<br>")
+
+        });
+        file3.write("<br>")
+        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
+
+
+        // file3.write("<form  action=\"/view\" method=\"post\">")
+        file3.write("<button style=\"margin-left : 20em;font-size: 22px; margin: 4px 20px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"View\"><strong>View</strong></button>")
+        file3.write("</form></div>")
+        file3.write("</section></body> </html>")
+    });
 }),
 
     app.get('/quiz', function (request, response) {
         response.sendFile(__dirname + "/qdg1.html");
+
+
     }),
     app.get('/test', function (request, response) {
-        console.log("rupsi")
-        var response1=shell.exec("npm run landingFeatureTest");
-        console.log(response1)
-        if (response1.length>0)
-        response.send(response1);
+        response.sendFile(__dirname + "\\checkbox.html");
+
     }),
+    //app.get('/view', function (request, response) {
+    app.post('/view', function (req, res) {
+        res.render('quiz2', { name: req.body.name });
+        // });
+        console.log(request)
+        console.log(response)
+        app.use(
+            cors({
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+            })
+        );
+        const { readFileSync } = require('fs')
+        var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + landingTest + ".json"));
+
+        /* app.use(
+             cors({
+               headers: {
+                 "Content-Type": "application/json"
+               },
+            
+             })
+           );
+ */
+        console.log(loadUser)
+        response.json(loadUser);
+
+    }),
+    app.get('/quiz2', function (req, response) {
+        fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
+            //handling error
+            if (err) {
+                return console.log('Unable to scan directory: ' + err);
+            }
+            executionFile = Object.values(req.query);
+            var i = 0;
+            if ((req.originalUrl).includes("View")) {
+                const { readFileSync } = require('fs')
+                var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + executionFile[0] + ".json"));
+                response.json(loadUser);
+            }
+            else {
+
+                if (executionFile.length > 2) {
+                    for (i = 1; i < executionFile.length - 1; i++) {
+                        executionFile[i] = executionFile[i - 1] + ".json," + executionFile[i] + ".json"
+                        testName = executionFile[i];
+                    }
+                }
+                else {
+                    testName = executionFile[0] + ".json";
+                }
+                console.log("Running the test : " + testName)
+                var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
+              //  response.send(response1);
+              console.log(__dirname + "/output/reports/TestReports/index.html")
+              response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+            }
+            /*       if (response1.length > 0)
+                     file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
+                 response1.replace("\n", "<br>")
+                 file1.write(String(response1))
+                 file2 = fs.createWriteStream(__dirname + '/testResult.html');
+                 file2.write("<!DOCTYPE html><html><body>")
+                 file2.write("<object data=\"" + __dirname + '/executionoutput.txt' + "\" width=\"800\" height=\"1000\" Not supported </object>)")
+                 file2.write("</body> </html>")
+                 response.sendFile(__dirname + '/testResult1.html')
+                 //
+        */ })
+    }),
+
     app.post('/upload', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
             res.status(400).send('No files were uploaded please retry.');

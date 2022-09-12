@@ -9,7 +9,7 @@
             {
                 "id": "launchUrl",
                 "description": "",
-                "testFile": "./app/core/runner/launchUrl.js",
+                "testFile": "./engageAppTools/core/runner/launchUrl.js",
                 "testData": []
             }
         ],
