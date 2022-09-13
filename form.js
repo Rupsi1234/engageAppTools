@@ -133,7 +133,12 @@ app.get('/homepage', function (request, response) {
                 console.log("Running the test : " + testName)
                 var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
                 console.log(response1)
-                response.send(response1);
+                var mySubString = response1.substring(
+                    response1.indexOf("Running: chrome"), 
+                    response1.lastIndexOf("completed")
+                );
+                console.log(mySubString)
+                response.send(mySubString);
                 //  console.log(__dirname + "/output/reports/TestReports/index.html")
                 // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
             }
