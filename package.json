@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.js",
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
     "start": "node form.js",
     "start1": "node form.js",
     "landingFeatureTest": "wdio run ./wdio.conf.js --appType=difusionExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920"
