@@ -134,8 +134,8 @@ app.get('/homepage', function (request, response) {
                 var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
                 console.log(response1)
                 var mySubString = response1.substring(
-                    response1.indexOf("Running: chrome"), 
-                    response1.lastIndexOf("completed")
+                    response1.indexOf("Starting"), 
+                    response1.lastIndexOf("in chrome")
                 );
                 //console.log(mySubString)
                 response.send(mySubString);
