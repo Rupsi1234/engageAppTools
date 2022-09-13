@@ -132,15 +132,15 @@ app.get('/homepage', function (request, response) {
                 }
                 console.log("Running the test : " + testName)
                 var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
-                console.log(response1)
-                var mySubString = response1.substring(
-                    response1.indexOf("Starting"), 
-                    response1.lastIndexOf("in chrome")
-                );
+                //console.log(response1)
+               // var mySubString = response1.substring(
+                 //   response1.indexOf("Starting"), 
+                 //   response1.lastIndexOf("in chrome")
+                //);
                 //console.log(mySubString)
-                response.send(mySubString);
+                //response.send(mySubString);
                 //  console.log(__dirname + "/output/reports/TestReports/index.html")
-                // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+                 response.sendFile(__dirname + "/output/reports/TestReports/index.html");
             }
             /*       if (response1.length > 0)
                      file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
