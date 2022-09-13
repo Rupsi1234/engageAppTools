@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "test": "wdio run ./wdio.conf.js",
     "start": "node form.js",
     "start1": "node form.js",
     "landingFeatureTest": "wdio run ./wdio.conf.js --appType=difusionExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920"
@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wdio/cli": "^7.19.4"
+    "@wdio/cli": "^7.24.0"
   },
   "dependencies": {
     "@applitools/eyes-webdriverio": "^5.35.8",
@@ -27,7 +27,7 @@
     "appium": "^1.16.0",
     "chai": "^4.3.6",
     "chrome": "^0.1.0",
-    "chromedriver": "105.0.0",
+    "chromedriver": "103.0.0",
     "combine-image": "1.0.3",
     "css-selector-parser": "^1.4.1",
     "css-selector-tools": "^1.0.9",
