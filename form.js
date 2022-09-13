@@ -137,7 +137,7 @@ app.get('/homepage', function (request, response) {
                     response1.indexOf("Running: chrome"), 
                     response1.lastIndexOf("completed")
                 );
-                console.log(mySubString)
+                //console.log(mySubString)
                 response.send(mySubString);
                 //  console.log(__dirname + "/output/reports/TestReports/index.html")
                 // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
