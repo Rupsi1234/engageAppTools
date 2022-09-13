@@ -105,7 +105,7 @@ app.get('/homepage', function (request, response) {
 
     }),
     //app.get('/view', function (request, response) {
- 
+
     app.get('/quiz2', function (req, response) {
         fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
             //handling error
@@ -131,11 +131,11 @@ app.get('/homepage', function (request, response) {
                     testName = executionFile[0] + ".json";
                 }
                 console.log("Running the test : " + testName)
-                var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
-          console.log(response1)
+                var response1 = shell.exec("npm run landingFeatureTest");
+                console.log(response1)
                 response.send(response1);
-            //  console.log(__dirname + "/output/reports/TestReports/index.html")
-             // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+                //  console.log(__dirname + "/output/reports/TestReports/index.html")
+                // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
             }
             /*       if (response1.length > 0)
                      file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
