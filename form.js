@@ -131,8 +131,7 @@ app.get('/homepage', function (request, response) {
                     testName = executionFile[0] + ".json";
                 }
                 console.log("Running the test : " + testName)
-                var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920");
-                console.log(response1)
+                var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
                // var mySubString = response1.substring(
                  //   response1.indexOf("Starting"), 
                  //   response1.lastIndexOf("in chrome")
