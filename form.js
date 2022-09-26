@@ -7,7 +7,7 @@ var fs = require('fs');
 const fileUpload = require('express-fileupload');
 const open = require('open');
 
-var testName;
+var testName,response1;
 
 
 //use the application off of express.
@@ -85,12 +85,14 @@ app.get('/homepage', function (request, response) {
 
         });
         file3.write("<br>")
-        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Next\" ><strong>Next</strong></button>")
+        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Next\" ><strong>Click for Running the Test</strong></button>")
 
 
         // file3.write("<form  action=\"/view\" method=\"post\">")
         file3.write("<button style=\"margin-left : 20em;font-size: 22px; margin: 4px 20px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"View\"><strong>View</strong></button>")
         file3.write("<button style=\"margin-left : 20em;font-size: 22px; margin: 4px 20px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Report\"><strong>Report</strong></button>")
+        file3.write("<button style=\"margin-left : 20em;font-size: 22px; margin: 4px 20px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Result\"><strong>Result</strong></button>")
+
         file3.write("</form></div>")
         file3.write("</section></body> </html>")
     });
@@ -110,10 +112,9 @@ app.get('/homepage', function (request, response) {
 
 
         response.send("PLEASE CLICK ON REPORT BUTTON AFTER 5 MINS TO CHECK THE RESULTS");
-        var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
+        response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
         console.log(response1)
-    }),
-
+    })
     app.get('/report', function (request, response) {
         response.sendFile(__dirname + "/output/reports/TestReports/index.html");
     }),
@@ -136,6 +137,10 @@ app.get('/homepage', function (request, response) {
             else if ((req.originalUrl).includes("Report")) {
                 response.sendFile(__dirname + "/output/reports/TestReports/index.html");
             }
+           else if ((req.originalUrl).includes("Result")) {
+
+                response.send(response1)
+            }
             else {
 
                 if (executionFile.length > 2) {
@@ -148,6 +153,8 @@ app.get('/homepage', function (request, response) {
                     testName = executionFile[0] + ".json";
                 }
                 console.log("Running the test : " + testName)
+
+                response.sendFile(__dirname + "/tcp2.html");
                 // var mySubString = response1.substring(
                 //   response1.indexOf("Starting"), 
                 //   response1.lastIndexOf("in chrome")
@@ -157,9 +164,7 @@ app.get('/homepage', function (request, response) {
                      response.write("Test is Passed")
                  else
                      response.write("fail in chrome");*/
-                var file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
-                file1.write(String(testName))
-                response.sendFile(__dirname + "/tcp2.html");
+
                 //  var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
 
                 //  console.log(__dirname + "/output/reports/TestReports/index.html")
