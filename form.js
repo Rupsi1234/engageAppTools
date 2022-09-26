@@ -85,7 +85,7 @@ app.get('/homepage', function (request, response) {
 
         });
         file3.write("<br>")
-        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Run\" ><strong>Run</strong></button>")
+        file3.write("<div display:inline-block><button style=\"font-size: 22px; margin: 4px 2px; cursor: pointer\" class=\"w3-btn w3-black has-text-grey-light\" name=\"Next\" ><strong>Next</strong></button>")
 
 
         // file3.write("<form  action=\"/view\" method=\"post\">")
@@ -106,10 +106,10 @@ app.get('/homepage', function (request, response) {
 
     }),
 
-    app.post('/test1234', function (request, response) {
+    app.post('/check', function (request, response) {
 
 
-        response.send("please click on back after 5 mins and click on report button");
+        response.send("PLEASE CLICK ON REPORT BUTTON AFTER 5 MINS TO CHECK THE RESULTS");
         var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
         console.log(response1)
     }),
