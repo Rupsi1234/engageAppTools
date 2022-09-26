@@ -7,7 +7,7 @@ var fs = require('fs');
 const fileUpload = require('express-fileupload');
 const open = require('open');
 
-
+var  testName;
 
 
 //use the application off of express.
@@ -104,46 +104,60 @@ app.get('/homepage', function (request, response) {
         response.sendFile(__dirname + "/checkbox.html");
 
     }),
+
+    app.post('/test1234', function (request, response) {
+
+      
+        response.send("please click on after 5 mins  "+__dirname + "/output/reports/TestReports/index.html");
+        var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
+        console.log( response1)
+    }),
+  
     //app.get('/view', function (request, response) {
 
-    app.get('/quiz2', function (req, response) {
-        fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
-            //handling error
-            if (err) {
-                return console.log('Unable to scan directory: ' + err);
-            }
-            executionFile = Object.values(req.query);
-            var i = 0, testName;
-            if ((req.originalUrl).includes("View")) {
-                const { readFileSync } = require('fs')
-                var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + executionFile[0] + ".json"));
-                response.json(loadUser);
+app.get('/quiz2', function (req, response) {
+    fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        executionFile = Object.values(req.query);
+        var i = 0;
+        if ((req.originalUrl).includes("View")) {
+            const { readFileSync } = require('fs')
+            
+            var loadUser = JSON.parse(readFileSync(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/' + executionFile[0] + ".json"));
+            response.json(loadUser);
+        }
+        else {
+
+            if (executionFile.length > 2) {
+                for (i = 1; i < executionFile.length - 1; i++) {
+                    executionFile[i] = executionFile[i - 1] + ".json," + executionFile[i] + ".json"
+                    testName = executionFile[i];
+                }
             }
             else {
-
-                if (executionFile.length > 2) {
-                    for (i = 1; i < executionFile.length - 1; i++) {
-                        executionFile[i] = executionFile[i - 1] + ".json," + executionFile[i] + ".json"
-                        testName = executionFile[i];
-                    }
-                }
-                else {
-                    testName = executionFile[0] + ".json";
-                }
-                console.log("Running the test : " + testName)
-                var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
-               // var mySubString = response1.substring(
-                 //   response1.indexOf("Starting"), 
-                 //   response1.lastIndexOf("in chrome")
-                //);
-                //console.log(mySubString)
-                if (response1.includes("PASSED in chrome"))
-                response.send("Test is Passed")
-                else
-                response.send("fail in chrome");
-                //  console.log(__dirname + "/output/reports/TestReports/index.html")
-                // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+                testName = executionFile[0] + ".json";
             }
+            console.log("Running the test : " + testName)
+                // var mySubString = response1.substring(
+            //   response1.indexOf("Starting"), 
+            //   response1.lastIndexOf("in chrome")
+            //);
+            //console.log(mySubString)
+           /* if (response1.includes("PASSED in chrome"))
+                response.write("Test is Passed")
+            else
+                response.write("fail in chrome");*/
+              var  file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
+               file1.write(String(testName))
+                response.sendFile(__dirname + "/tcp2.html");
+              //  var response1 = shell.exec("npm run test -- --appType=difusionExperienceApp --testEnv=production --testExecFile=" + testName + " --browserCapability=desktop-chrome-1920")
+       
+            //  console.log(__dirname + "/output/reports/TestReports/index.html")
+            // response.sendFile(__dirname + "/output/reports/TestReports/index.html");
+        }
             /*       if (response1.length > 0)
                      file1 = fs.createWriteStream(__dirname + '/executionoutput.txt');
                  response1.replace("\n", "<br>")
@@ -155,7 +169,7 @@ app.get('/homepage', function (request, response) {
                  response.sendFile(__dirname + '/testResult1.html')
                  //
         */ })
-    }),
+}),
 
     app.post('/upload', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
@@ -179,7 +193,7 @@ app.get('/homepage', function (request, response) {
                     return console.log(err);
                 }
                 var loJson = JSON.parse(data);
-               var quizObj = {
+                var quizObj = {
                     "quizName": {
                         // "totalScore": 0,
                         // "passScore": 0,
