@@ -364,12 +364,15 @@ module.exports = {
         await logger.logInto(await stackTrace.get());
         res = await this.waitForDisplayed("[data-tid=image-loader]", undefined, true);
         res2 = await this.waitForDisplayed("[class*=rogress][class*=indeterminate]", undefined, true);
+        let res3 = await this.waitForDisplayed("[class*=MuiSkeleton]", undefined, true);
         if (!res)
-            console.log("Loader (image-loader) still exists after 30s - " + res)
+            console.log("Loader (image-loader) still exists after timeout - " + res)
         else if (!res2)
-            console.log("Loader (CircularProgress) still exists after 30s - " + res2)
+            console.log("Loader (CircularProgress) still exists after timeout - " + res2)
+        else if (!res3)
+            console.log("Loader (Page skeleton) still exists after timeout - " + res3)
         else {
-            res = await browser.waitUntil(async function() {
+            res = await browser.waitUntil(async function () {
                 return browser.execute(function () {
                     var imagesLoad;
                     let imgs = document.getElementsByTagName("img");

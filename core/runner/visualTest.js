@@ -2,13 +2,12 @@
 var rootDir = process.cwd();
 var mergeImg = require(path.join(rootDir, '/core/utils/mergeImage.js'));
 var hideSelectors = [
-    '[data-tid=text-versionInfo]',
-    '[data-tid*=text-time-recent]',
-    'input[id=startDate]',
-    'input[id=endDate]'
-];
-var excludeSelectors = [];
-const { Eyes, Target, ClassicRunner, By, Configuration, BatchInfo, StitchMode } = require('@applitools/eyes-webdriverio');
+    'h4[data-tid="title-analyticsbox-0-1"]',
+    '[data-tid=text-versionInfo]'];
+var excludeSelectors = [
+    '[id=input-startDate]',
+    '[id=input-endDate]'];
+const { Eyes, Target, ClassicRunner, By, Configuration, BatchInfo } = require('@applitools/eyes-webdriverio');
 var eyes = new Eyes();
 var action = require(rootDir + '/core/actionLibrary/baseActionLibrary');
 var labelsDir = '/screenshots/labels/' + global.view;
@@ -72,21 +71,12 @@ module.exports = {
         global.tcNumber = parseInt(testIndex) + 1;
         global.tcId = testObj.id;
         var hideElements = [];
-
         // find all the elements to be hide while taking screenshots
         let codemod_placeholder_6971 = Object.keys(hideSelectors);
-        /*for (const selector of codemod_placeholder_6971) {
-            hideElements[selector] = await action.findElements(hideSelectors[selector]);
-            console.log(hideSelectors[selector])
-            console.log(hideElements[selector].length)
-        };*/
 
-        await Promise.all(codemod_placeholder_6971.map(async (selector) => {
+        for (const selector of codemod_placeholder_6971) {
             hideElements[selector] = await action.findElements(hideSelectors[selector]);
-            //console.log(hideSelectors[selector])
-            //console.log(hideElements[selector].length)
-        }))
-
+        };
         var excludeElements = [];
         // find all the elements to be hide while taking screenshots
         let codemod_placeholder_2646 = Object.keys(excludeSelectors);
@@ -151,31 +141,21 @@ module.exports = {
     generateScreenshotsApplitools: async function (testObj) {
         //Ignore Region Capabilty- Applitools
         if (testObj.visualTolerance) {
-            console.log("testvisual")
             await browser.call(() => eyes.check(testObj.id, ((Target.window()).fully()).ignoreRegions(By.css(testObj.visualTolerance))))
-        } else {
-            await this.enableFullPageScrolling();
-            await browser.call(() => eyes.check(testObj.id, ((Target.window()).fully())));
+        } else
             //Default screenshot capture- Applitools
-            //await browser.call(() => eyes.check(testObj.id, Target.region(By.cssSelector('#scroolbarDiv')).fully()));
-        }
-
+            await browser.call(() => eyes.check(testObj.id, (Target.window()).fully()))
     },
 
     //setting params to initiate Applitools
     initiateApplitools: async function () {
         console.log("applitools Initiated..")
-        eyes.setConfiguration(browser.config.eyes);
-        eyes.setMatchLevel(browser.config.eyes.matchLevel)
-        eyes.setBatch(browser.config.eyes.batch);
-        eyes.setApiKey(browser.config.eyes.apiKey);
-        eyes.setStitchMode(StitchMode.CSS);
-        eyes.setForceFullPageScreenshot(true);
-     
-       // eyes.setStitchMode(StitchMode.CSS);
-       
+        await eyes.setConfiguration(browser.config.eyes);
+        await eyes.setMatchLevel(browser.config.eyes.matchLevel)
+        await eyes.setStitchMode(browser.config.eyes.stitchMode);
+        await eyes.setBatch(browser.config.eyes.batch);
         //eyes.setBaselineEnvName('MasterEnv');
-      
+        await eyes.setApiKey(browser.config.eyes.apiKey);
     },
 
     //open Applitools eyes

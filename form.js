@@ -41,7 +41,7 @@ app.get('/homepage', function (request, response) {
     //passsing directoryPath and callback function
     file3 = fs.createWriteStream(__dirname + '/checkbox.html');
     console.log(__dirname + '/checkbox.html')
-    fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/qa', function (err, files) {
+    fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production', function (err, files) {
         //handling error
         if (err) {
             return console.log('Unable to scan directory: ' + err);
@@ -49,7 +49,7 @@ app.get('/homepage', function (request, response) {
         //listing all files using forEach
         file3.write("<!DOCTYPE html><html>")
         file3.write("<head> <meta charset=\"utf-8\">\ <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta http-equiv=\"Cache-Control\" content=\"no-cache, no-store, must-revalidate\" />" +
-            "<meta http-equiv=\"Pragma\" content=\"no-cache\" /><meta http-equiv=\"Expires\" content=\"0\" /> <title>Login - Engage QA Tools</title><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css\">" +
+            "<meta http-equiv=\"Pragma\" content=\"no-cache\" /><meta http-equiv=\"Expires\" content=\"0\" /> <title>Engage QA Tools - Execution File</title><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css\">" +
             "</head>")
         file3.write("<body>")
         file3.write("class=\"has-navbar-fixed-top\">    <nav class=\"navbar has-background-grey-lighter is-fixed-top is-spaced has-shadow\" role=\"navigation\" " +
@@ -74,7 +74,7 @@ app.get('/homepage', function (request, response) {
             "<a class=\"navbar-item\" href=\"https://bitbucket.org/dashboard/repositories\" target=\"_blank\">Bitbucket</a>" +
             "<hr class=\"navbar-divider\"><a class=\"navbar-item has-text-grey-light\" disabled>Contact</a></div></div> </div>" +
             "<form method='GET' action=\"/\"> <button class=\"button\"><strong>Log Out</strong></button></form> </div ></nav ><br><br> <section class=\"section\">")
-        file3.write("<form  action=\"/quiz2\" method=\"get\">")
+        file3.write("<form  action=\"/execution\" method=\"get\">")
         files.forEach(function (file) {
             // Do whatever you want to do with the file
             var res = []
@@ -120,7 +120,7 @@ app.get('/homepage', function (request, response) {
     }),
     //app.get('/view', function (request, response) {
 
-    app.get('/quiz2', function (req, response) {
+    app.get('/execution', function (req, response) {
         fs.readdir(__dirname + '/testResources/testExecutionFiles/difusionExperienceApp/production/', function (err, files) {
             //handling error
             if (err) {

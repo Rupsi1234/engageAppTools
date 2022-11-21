@@ -78,6 +78,15 @@
                     ],
                     "info": {}
                 },
+                "validStudent4": {
+                    "email": "qa_student006@yopmail.com",
+                    "password": "Compro@1234",
+                    "role": "student",
+                    "name": "qa_student006",
+                    "class": [],
+                    "country": "",
+                    "info": "Automation User.Do Not Touch."
+                },
                 "assignmentStudent": {
                     "email": "dev2_student17Jan@yopmail.com",
                     "password": "Compro@1234",

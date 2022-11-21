@@ -2,7 +2,6 @@
 var appShell = require('../../pages/engageExperienceApp/appShell.page.js');
 var createClassPage = require('../../pages/engageExperienceApp/createClass.page.js');
 var classDashboardPage = require('../../pages/engageExperienceApp/classDashboard.page.js');
-const { confirmPasswordError_text } = require('../../pages/engageExperienceApp/settings.page.js');
 var sts;
 
 module.exports = {
@@ -138,7 +137,7 @@ module.exports = {
 	},
 
 	//Validate that the list of the tabs is correct
-	ENG_SHELL_TC_16: async function (testdata) {
+	ENG_SHELL_TC_16: async function () {
 		sts = await appShell.getTabsListData();
 	},
 
@@ -193,47 +192,67 @@ module.exports = {
 	ENG_SHELL_TC_22: async function () {
 		sts = await appShell.click_closetocbtn();
 		await assertion.assertEqual(sts.pageStatus, true, "Page status mismatch");
-		console.log(sts)
 	},
 	//Validate the click on product button
 	ENG_SHELL_TC_23: async function (testdata) {
 		sts = await appShell.click_producHeadertbtn();
-		for (var i=0;i<sts.length;i++)
-		{
+		for (var i = 0; i < sts.length; i++) {
 			await assertion.assertEqual(sts[i].sectiongroup, testdata[i].title, "Page status mismatch");
 		}
 	},
 	//Validate the click on section Items
 	ENG_SHELL_TC_24: async function (testdata) {
-		console.log(testdata[1])
 		sts = await appShell.click_sectiongroup(testdata[0]);
-		for (var i=0;i<sts.length;i++)
-		{
+		for (var i = 0; i < sts.length; i++) {
 			await assertion.assertEqual(sts[i].resoursebtn, testdata[1][i], "Page status mismatch");
 		}
 	},
 	//Validate the click on resourse Items
 	ENG_SHELL_TC_25: async function (testdata) {
-		sts = await appShell.click_resoursebtn(testdata[0],testdata[1]);
+		sts = await appShell.click_resoursebtn(testdata[0], testdata[1]);
 		await assertion.assertEqual(sts, true, "resourse is clicked")
 	},
 	//Validate the click on material button
 	ENG_SHELL_TC_26: async function (testdata) {
 		sts = await appShell.click_materialbtn();
-		console.log(sts)
-	
-		for (var i=0;i<sts.length;i++)
-		{
-			console.log(sts[i].productbtn)
-			console.log(testdata[i].name.EN)
-			await assertion.assertEqual(sts[i].productbtn, testdata[i].name.EN, "Page status mismatch");
+
+		for (var i = 0; i < sts.length; i++) {
+			await assertion.assertEqual(sts[i].indexproductbtn, testdata[i].name.EN, "Page status mismatch");
 		}
 	},
 	//Validate the click on Product Items
 	ENG_SHELL_TC_27: async function (testdata) {
-		console.log(testdata)
-		sts = await appShell.click_productbtn(testdata);
+		sts = await appShell.click_indexproductbtn(testdata);
 		await assertion.assertEqual(sts, true, "Product is clicked")
+		sts = await appShell.getData_sectionPanel()
+		await assertion.assertEqual(sts[0].sectiongroup, "1. Unit 1", "Product is clicked")
 	},
 
+	ENG_SHELL_TC_28: async function (testdata) {
+		sts = await appShell.click_infoBtn()
+		await assertion.assertEqual(sts.infoTocHeading, testdata.infoTocHeading, "infoTocHeading mismatch");
+		await assertion.assertEqual(sts.closeInfoBtn, true, "closeInfoBtn mismatch");
+	},
+	ENG_SHELL_TC_29: async function (testdata) {
+		sts = await appShell.getData_infoData()
+		await assertion.assertEqual(sts.infoTocHeading, testdata[2].infoTocHeading, "infoTocHeading mismatch");
+		await assertion.assertEqual(sts.closeInfoBtn, true, "closeInfoBtn mismatch");
+		await assertion.assertEqual(sts.chapterTitle, testdata[1], "chapterTitle text mismatch");
+		await assertion.assertEqual(sts.productbtn, testdata[0], "productbtn text mismatch");
+		await assertion.assertEqual(sts.bookIcon, true, "bookIcon mismatch");
+		await assertion.assertEqual(sts.bookName, testdata[3].name, "bookName text mismatch");
+	},
+	ENG_SHELL_TC_30: async function (testdata) {
+		sts = await appShell.click_resourseData(testdata)
+		await assertion.assertEqual(sts, true, "Resourse is not launched. ");
+	},
+	ENG_SHELL_TC_31: async function (testdata) {
+		sts = await appShell.click_closeInfoBtn(testdata)
+		await assertion.assertEqual(sts, true, "Close btn is not clicked");
+	},
+	//Validate that clicking on the Library button in left Navigation pane launches Library page 
+	ENG_SHELL_TC_32: async function () {
+		sts = await appShell.clickLibraryButton();
+		await assertion.assertEqual(sts.pageStatus, true, "Button is clicked.");
+	},
 }

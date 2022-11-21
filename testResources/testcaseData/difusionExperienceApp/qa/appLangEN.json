@@ -94,7 +94,6 @@
                     "removeBook_cancelBtn": "Cancel",
                     "removeBook_removeBtn": "Remove",
                     "createPlaylist_label": "Playlist Name",
-                    "createPlaylist_input": "",
                     "createPlaylist_cancelBtn": "Cancel",
                     "createPlaylist_createBtn": "Create",
                     "exploreHeading": "Explore",
@@ -115,7 +114,29 @@
                         "See recent news to pair with lessons and activities.",
                         "Top activities to project in your classroom."
                     ],
-                    "recentlyViewedHeading": "Recently Viewed"
+                    "recentlyViewedHeading": "Recently Viewed",
+                    "recentMaterialsBtn": "Recent Materials",
+                    "addNewMaterialBtn": "Add New Material",
+                    "noMaterialTitle": "No Materials created yet",
+                    "noMaterialSubtitle": "Any materials you create or modify will be shown here for you to view and assign to your class",
+                    "viewAllMaterialBtn": "View All Materials",
+                    "createNewLabel": "Create New",
+                    "blankQuizOption": "Blank Quiz",
+                    "blankSurveyOption": "Blank Survey",
+                    "newResourceOption": "New Resource",
+                    "previewMaterialOption": "Preview",
+                    "editMaterialOption": "Edit",
+                    "duplicateMaterialOption": "Duplicate",
+                    "deleteMaterialOption": "Delete",
+                    "deleteMaterialDialogTitle": "Delete Material?",
+                    "deleteMaterialDialogSubtitle": "This will remove the material \"Acceptance Quiz\" from your library",
+                    "deleteMaterialDialogWarning": "This process is unrecoverable and your data will be lost forever.",
+                    "deleteMaterialDialogCancelBtn": "Cancel",
+                    "deleteMaterialDialogDeleteBtn": "Delete",
+                    "editMaterialDialogTitle": "Edit Quiz",
+                    "editMaterialDialogSubtitle": "Editing this quiz will create a new version and will not impact the classes where it is already added.",
+                    "editMaterialDialogEditBtn": "Continue to Edit",
+                    "editMaterialDialogCancelBtn": "Cancel"
                 },
                 "student": {
                     "pageTitle": "Dashboard",
@@ -159,7 +180,6 @@
                     "removeBook_cancelBtn": "Cancel",
                     "removeBook_removeBtn": "Remove",
                     "createPlaylist_label": "Playlist Name",
-                    "createPlaylist_input": true,
                     "createPlaylist_cancelBtn": "Cancel",
                     "createPlaylist_createBtn": "Create",
                     "exploreHeading": "Explore",
@@ -172,7 +192,12 @@
                         "Find here hundreds of interactive exercises to improve your vocabulary.",
                         "New & trending video resources to pair with your lessons."
                     ],
-                    "recentlyViewedHeading": "Recently Viewed"
+                    "recentlyViewedHeading": "Recently Viewed",
+                    "recentMaterialsBtn": null,
+                    "addNewMaterialBtn": null,
+                    "noMaterialTitle": null,
+                    "noMaterialSubtitle": null,
+                    "viewAllMaterialBtn": null
                 }
             },
             "createClassPage": {
@@ -360,6 +385,14 @@
                         "Correct",
                         "Oops! Not quite correct.",
                         "Not Correct"
+                    ],
+                    "kidsFeedbackTitle": [
+                        "Not quite right.",
+                        "Nice Job"
+                    ],
+                    "kidsFeedbackSubtitle": [
+                        "You can try this again later.",
+                        "You selected the correct response."
                     ]
                 },
                 "student": {
@@ -398,14 +431,22 @@
                         "Oops! Not quite correct.",
                         "Not Correct"
                     ],
-                    "closeAssignmentBtn": "Close Assignment"
+                    "closeAssignmentBtn": "Close Assignment",
+                    "kidsFeedbackTitle": [
+                        "Not quite right.",
+                        "Nice Job"
+                    ],
+                    "kidsFeedbackSubtitle": [
+                        "You can try this again later.",
+                        "You selected the correct response."
+                    ]
                 }
             },
             "activityPlayerPage": {
                 "correct_txt": "Well done",
                 "incorrect_txt": "Oops! Not quite correct."
             },
-            "onboarding": {
+            "onboardingOld": {
                 "welcomePage": {
                     "pageHeading": "Welcome, ",
                     "message": "Let's get started. Select the role that best describes you.",
@@ -723,7 +764,11 @@
                     "filterMenuCloseBtn": "",
                     "filterMenuFilterCount": " filters added",
                     "filterMenuClearAllBtn": "Clear All",
-                    "filterMenuApplyBtn": "Apply Filters"
+                    "filterMenuApplyBtn": "Apply Filters",
+                    "viewAllSearchCount": "results:",
+                    "partOfText": "Part of: ",
+                    "otherBooks": "Other Books",
+                    "showMoreBooks": "Show More Books"
                 },
                 "student": {
                     "pageTitle": [
@@ -767,7 +812,11 @@
                     "filterMenuCloseBtn": "",
                     "filterMenuFilterCount": " filters added",
                     "filterMenuClearAllBtn": "Clear All",
-                    "filterMenuApplyBtn": "Apply Filters"
+                    "filterMenuApplyBtn": "Apply Filters",
+                    "viewAllSearchCount": "results:",
+                    "partOfText": "Part of: ",
+                    "otherBooks": "Other Books",
+                    "showMoreBooks": "Show More Books"
                 }
             },
             "playlist": {
@@ -1180,7 +1229,7 @@
                 "teacher": {
                     "tocPanelHeader": "Jump to Section",
                     "currentlbl": "Curent",
-                    "materialbtn":"Materials"
+                    "materialbtn": "Materials"
                 }
             },
             "openActivityPlayer": {
@@ -1314,6 +1363,251 @@
                     "submitActivityDialogCancelBtn": "Cancel",
                     "submitActivityDialogConfirmBtn": "Confirm & Submit"
                 }
+            },
+            "onboarding": {
+                "teacher": {
+                    "welcomeTxt": "Welcome général d’expressions!",
+                    "welcomeSubtitleTxt": "You have successfully created your account.",
+                    "completeStepsTitleTxt": "Getting started on Engage",
+                    "completeStepsSubtitleTxt": "Complete these simple steps and get instant access to courses and activities.",
+                    "joinSchoolTxt": "Join your school",
+                    "activateMaterialsTxt": "Activate your materials",
+                    "accessEngageTxt": "Access Engage",
+                    "teacherGetStartedBtn": "Get Started",
+                    "studentGetStartedBtn": "Get Started",
+                    "logoutBtn": "Logout",
+                    "joinYourSchoolTitleTxt": "Join Your School",
+                    "joinYourSchoolSubTitleTxt": "Enter the school key provided by your school to join as a teacher.",
+                    "schoolKeyLbl": "School Key",
+                    "schoolKeySubLbl": "School key should look like: ABC-DEF-GHI.",
+                    "joinSchoolHelperTxt": "Please contact your school admin if you don't have the school key.",
+                    "verifyBtn": "Verify Key",
+                    "continueBtn": "Continue",
+                    "joinSchoolBackBtn": "Back to start",
+                    "schoolNameTxt": "Richmond High School",
+                    "addressTxt": "7 Lsc uday park, Allahabad bank building, Delhi, Delhi, India, 110049",
+                    "schoolKeyErrorTxt": [
+                        "School Key is required",
+                        "This school key is invalid. Please contact your school admin."
+                    ],
+                    "activateMaterialsTitleTxt": "Activate your materials",
+                    "activateMaterialsSubTitleTxt": "Enter the access key from your book to get access to digital materials.",
+                    "accessKeyLbl": "Access Key",
+                    "accessKeySubLbl": "Access key should look like: 7HRA-7UHW-QFER-H4TF.",
+                    "activateMaterialHelperTxt": "You can find your key inside the textbook you have purchased.",
+                    "activateMaterialsBtn": "Activate Materials",
+                    "activateErrorTxt": [
+                        "Access key is required",
+                        "This access key is invalid.",
+                        "This access key has already been used.",
+                        "This access key has expired."
+                    ],
+                    "teacherActivateMaterialsBackBtn": "Back (Enter a different school key)",
+                    "studentActivateMaterialsBackBtn": null
+                },
+                "student": {
+                    "welcomeTxt": "Welcome Onboard Student6!",
+                    "welcomeSubtitleTxt": "You have successfully created your account.",
+                    "completeStepsTitleTxt": "Getting started on Engage",
+                    "completeStepsSubtitleTxt": "Complete this simple step and get instant access to courses and activities.",
+                    "joinSchoolTxt": null,
+                    "activateMaterialsTxt": "Activate your materials",
+                    "accessEngageTxt": "Access Engage",
+                    "teacherGetStartedBtn": "Get Started",
+                    "studentGetStartedBtn": "Get Started",
+                    "logoutBtn": "Logout",
+                    "joinYourSchoolTitleTxt": null,
+                    "joinYourSchoolSubTitleTxt": null,
+                    "schoolKeyLbl": null,
+                    "schoolKeyTextbox": null,
+                    "schoolKeySubLbl": null,
+                    "joinSchoolHelperTxt": null,
+                    "verifyBtn": null,
+                    "continueBtn": null,
+                    "joinSchoolBackBtn": null,
+                    "schoolNameTxt": null,
+                    "addressTxt": null,
+                    "schoolKeyErrorTxt": null,
+                    "activateMaterialsTitleTxt": "Activate your materials",
+                    "activateMaterialsSubTitleTxt": "Enter the access key from your book to get access to digital materials.",
+                    "accessKeyLbl": "Access Key",
+                    "accessKeySubLbl": "Access key should look like: 7HRA-7UHW-QFER-H4TF.",
+                    "activateMaterialHelperTxt": "You can find your key inside the textbook you have purchased.",
+                    "activateMaterialsBtn": "Activate Materials",
+                    "activateErrorTxt": [
+                        "Access key is required",
+                        "This access key is invalid.",
+                        "This access key has already been used.",
+                        "This access key has expired."
+                    ],
+                    "teacherActivateMaterialsBackBtn": null,
+                    "studentActivateMaterialsBackBtn": "Back to start"
+                }
+            },
+            "signUp": {
+                "createAccountTitleTxt": "Create an account",
+                "createAccountSubTitleTxt": "Create your account using your email or a social login.",
+                "emailLbl": "Email",
+                "signUpBtn": "Sign Up with Email",
+                "continueWithTxt": "Or continue with:",
+                "googleBtn": "Google",
+                "facebookBtn": "Facebook",
+                "haveAnAccountTxt": "Have an account?",
+                "logInBtn": " Log in",
+                "emailErrorTxt": "Please enter a valid email address (for example, name@example.com)",
+                "roleSelectionTitleTxt": "Which role describes you best?",
+                "selectRoleTxt": "Select your role",
+                "studentRoleBtn": "I'm a student",
+                "teacherRoleBtn": "I'm a teacher",
+                "continueBtn": "Continue",
+                "backToSignInBtn": "Back to Sign in",
+                "roleSelectionErrorTxt": "Please select a role",
+                "accountDetailsTitleTxt": "Enter account details",
+                "passwordLbl": "Password",
+                "passwordHelperTxt": "Must have a min of 8 characters and contain: 1 uppercase, 1 lowercase, 1 number, and 1 special character.",
+                "confirmPasswordLbl": "Confirm Password",
+                "firstNameLbl": "First Name",
+                "lastNameLbl": "Last Name",
+                "countryLbl": "Country",
+                "policyLineTxt": "I accept the Privacy notice and Terms of use.",
+                "createAccountBtn": "Create Account",
+                "backToRoleSelectionBtn": "Back to Role selection",
+                "passwordErrorTxt": "Must have a min of 8 characters and contain: 1 uppercase, 1 lowercase, 1 number, and 1 special character.",
+                "confirmPasswordErrorTxt": "Password and Confirm password must match",
+                "firstNameErrorTxt": "First name is required",
+                "lastNameErrorTxt": "Last name is required",
+                "countryErrorTxt": "Country is required",
+                "policyLineErrorTxt": "Please accept Terms & Policy",
+                "privacyPoliceLink": "Privacy notice",
+                "termsOfUseLink": "Terms of use",
+                "privacyPolicyTab": "Privacy Policy",
+                "termsOfUseTab": "Terms of Use",
+                "policyCancelBtn": "Cancel",
+                "policyAgreeBtn": "I Agree",
+                "googlePageHeadingTxt": "Sign in",
+                "googlePageSubHeadingTxt": "to continue to amazoncognito.com",
+                "facebookPageHeadingTxt": "Log in to Facebook",
+                "userExistSnackBar": "User with this email ID exists"
+            },
+            "invitePage": {
+                "teacher": {
+                    "invitePageHeader": "Invite Student",
+                    "invitePageSubHeader": "Copy the email template below and use it to send an invite to your students to join this class.",
+                    "cancelInvitebtn": "Cancel",
+                    "copyInvitationbtn": "Copy Invitation",
+                    "copiedInvitation": "Invitation copied to clipboard!"
+                },
+                "student": {}
+            },
+            "libraryEditorPage": {
+                "teacher": {
+                    "savedtoLibrarylbl": "Saved to my Library",
+                    "draftlbl": "Draft",
+                    "pageHeader": "New Question",
+                    "quizHeaderName": "Untitled Quiz",
+                    "pageSubHeader": "Select a question type to get started:",
+                    "questionNumber": "Question",
+                    "finishQuiz": "Finish Quiz",
+                    "multipleChoicelbl": "Multiple Choice",
+                    "textChoicelbl": "Text",
+                    "questiontextbox": "Question Title",
+                    "inthisActivity": "In this activity",
+                    "addmediabtn": "Add Media",
+                    "addtextbtn": "Add Text",
+                    "Imagebtn": "Image",
+                    "audiobtn": "Audio",
+                    "vediobtn": "Video",
+                    "medialbl": "Media - Image",
+                    "browsebtn": "Browse",
+                    "selectonelbl": "Select one",
+                    "addsubquestionbtn": "Add Subquestion",
+                    "addOptionbtn": "Add Option",
+                    "drawerTitle": "Details",
+                    "tagsHeading": "Tags",
+                    "tagsSubHeading": "Use tags such as keywords that help you easily find this content and keep track of what students are learning.",
+                    "addTagslbl": "Add tags",
+                    "bookTagsHeading": "Book Tag",
+                    "bookTagsSubHeading": "Tag a book with this quiz to help organize and find this item in your library.",
+                    "booklbl": "Book",
+                    "newQuestionbtn": "New Question",
+                    "multipleChoicebtn": "Multiple Choice",
+                    "textbtn": "Text",
+                    "longAnswerbtn": "Long Answer",
+                    "fileUploadbtn": "File Upload",
+                    "finishdialogiueheader": "Finish Quiz | ",
+                    "questionlblfinishDialogue": "Questions",
+                    "medialblfinishDialogue": "Media",
+                    "questionMediafinishDialogue": "Media",
+                    "declarationboxtext1": "Before you complete, confirm the following:",
+                    "declarationboxtext2": "I declare that this content conforms to Engage instructor content guidelines and I have the right to share it with my class.",
+                    "ConfirmFinishbtn": "Confirm Finish",
+                    "linkinstructionhyperlink": "Instructor content guidelines",
+                    "previewbtn": "Preview",
+                    "duplicatebtn": "Duplicate",
+                    "deletebtn": "Delete",
+                    "previewcontainer": "Preview",
+                    "duplicate_msg": "Question has been successfully copied.",
+                    "added_msg": "Question has been successfully added."
+                },
+                "student": {}
+            },
+            "library": {
+                "teacher": {
+                    "libraryTitleTxt": "Library",
+                    "librarySubtitleTxt": "Create custom materials, upload additional documents, link videos, and more to use with your class.",
+                    "createMaterialsTxt": "Create Materials",
+                    "blankQuizBtn": "Blank Quiz",
+                    "blankSurveyBtn": "Blank Survey",
+                    "newResourceBtn": "New Resource",
+                    "recentMaterialsTxt": "Recent Materials",
+                    "pastDaysTxt": "Past 30 days",
+                    "viewAllMaterialsBtn": "View All Materials",
+                    "noMaterialTitleTxt": "No Materials created yet",
+                    "noMaterialSubtitleTxt": "Any materials you create or modify will be shown here for you to view and assign to your class",
+                    "quizTypeTxt": "Quiz",
+                    "draftPillTxt": "Draft",
+                    "editDraftBtn": "Edit Draft",
+                    "addToClassBtn": "Add to Class",
+                    "modifiedTxt": "Modified",
+                    "previewBtn": "Preview",
+                    "duplicateBtn": "Duplicate",
+                    "deleteBtn": "Delete",
+                    "editBtn": "Edit"
+                },
+                "student": {}
+            },
+            "myMaterials": {
+                "teacher": {
+                    "myMaterialsTxt": "My Materials",
+                    "addNewMaterialBtn": "Add New Material",
+                    "allTab": "All",
+                    "draftsTab": "Drafts",
+                    "publishedTab": "Published",
+                    "materialLabel": "Materials",
+                    "typeLabel": "Type",
+                    "modifiedLabel": "Last Modified",
+                    "noMaterialTitleTxt": [
+                        "No Materials created yet",
+                        "No materials in draft mode",
+                        "No materials published yet"
+                    ],
+                    "noMaterialSubtitleTxt": [
+                        "Any materials you create or modify will be shown here for you to view and assign to your class",
+                        "Any in-process materials will be shown here for you to view and manage.",
+                        "Any published materials will be shown here to view and assign to your class."
+                    ],
+                    "blankQuizBtn": "Blank Quiz",
+                    "blankSurveyBtn": "Blank Survey",
+                    "newResourceBtn": "New Resource",
+                    "materialsDraftPillTxt": "Drafts",
+                    "createNewTxt": "Create New",
+                    "menuBlankQuizBtn": "Blank Quiz",
+                    "menuBlankSurveyBtn": "Blank Survey",
+                    "menuNewResourceBtn": "New Resource",
+                    "previewBtn": "Preview",
+                    "deleteBtn": "Delete"
+                },
+                "student": {}
             }
         }
     }
