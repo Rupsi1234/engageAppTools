@@ -29,9 +29,9 @@ app.get("/", function (request, response) {
 app.listen(Port, function () {
     console.log('Express server listening on port ', Port); // eslint-disable-line
 });
-app.listen(8080);
-open('http://localhost:8080');
-console.log("Please launch http://localhost:8080 in your browser url/ or direct url");
+//app.listen(8080);
+//open('http://localhost:8080');
+//console.log("Please launch http://localhost:8080 in your browser url/ or direct url");
 
 app.get('/homepage', function (request, response) {
     response.sendFile(__dirname + "/home.html");
