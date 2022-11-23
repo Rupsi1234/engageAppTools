@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "landingFeatureTest": "wdio run ./wdio.conf.js --appType=difusionExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-360"
+    "landingFeatureTest": "wdio run ./wdio.conf.js --appType=difusionExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920"
      },
   "keywords": [],
   "author": "",
